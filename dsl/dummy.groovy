@@ -8,7 +8,7 @@ folder('dummy-folder') {
 
         definition {
             cps {
-                scriptText("""
+                script('''
                     pipeline {
                         agent any
                         tools {
@@ -37,7 +37,7 @@ folder('dummy-folder') {
                             }
                         }
                     }
-                """)
+                ''')
             }
         }
     }
