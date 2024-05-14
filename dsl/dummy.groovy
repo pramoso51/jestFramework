@@ -1,15 +1,15 @@
 folder('mi-carpeta') {
-    displayName('Mi-Carpeta')
+    displayName('mi-carpeta')
     description('Descripción de Mi Carpeta')
 }
 
 folder('mi-carpeta/mi-sub-carpeta') {
-    displayName('Mi-Sub-Carpeta')
+    displayName('mi-sub-carpeta')
     description('Descripción de Mi Sub Carpeta')
 }
 
 pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
-    displayName('Mi-Script')
+    displayName('mi-script')
     description('Script dentro de la carpeta')
 
     definition {
@@ -22,7 +22,7 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     }
 }
 
-job('Mi-Carpeta/Mi-Sub-Carpeta/Mi-Script') {
+job('mi-Carpeta/mi-sub-carpeta/mi-script') {
     publishers {
       downstreamParameterized {
         trigger("mi-Carpeta/mi-sub-carpeta/mi-script") {
