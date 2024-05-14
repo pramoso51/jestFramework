@@ -45,7 +45,5 @@ folder('dummy-folder') {
                 ''')
             }
         }
-
-        scheduleBuild('0 0 * * *')
     }
 }
