@@ -6,10 +6,6 @@ folder('dummy-folder') {
         displayName('Testing Jest Pipeline')
         description('Pipeline for running Jest tests')
 
-        triggers {
-            cron('@after_build') 
-        }
-
         definition {
             cps {
                 script('''
@@ -43,6 +39,9 @@ folder('dummy-folder') {
                     }
                 ''')
             }
+        }
+        triggers {
+            cron('@after_build') 
         }
     }
 }
