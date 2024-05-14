@@ -22,3 +22,5 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
         }
     }
 }
+
+build('mi-carpeta/mi-sub-carpeta/mi-script')
