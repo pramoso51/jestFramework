@@ -36,6 +36,11 @@ folder('dummy-folder') {
                                 }
                             }
                         }
+                        post {
+                            always {
+                                input 'Presiona Enter para ejecutar nuevamente este pipeline'
+                            }
+                        }
                     }
                 ''')
             }
