@@ -1,24 +1,16 @@
-// Define la estructura de carpetas y el trabajo de Pipeline
-folder('mi-carpeta') {
-    displayName('Mi Carpeta')
-    description('Descripción de Mi Carpeta')
-    
-    folder('mi-sub-carpeta') {
-        displayName('Mi Sub Carpeta')
-        description('Descripción de Mi Sub Carpeta')
+folder('mi-folder') {
+    displayName('Mi Folder')
+    description('Folder para organizar jobs')
 
-        pipelineJob('mi-script') {
-            displayName('Mi Script')
-            description('Script dentro de la carpeta')
+    pipelineJob('mi-folder/hola-mundo') {
+        displayName('Hola Mundo')
+        description('Pipeline que imprime Hola Mundo')
 
-            definition {
-                cps {
-                    // Define el script dentro de la definición del trabajo
-                    script('''
-                        echo "Hola Mundo"
-                        // Agrega aquí tus comandos o script
-                    ''')
-                }
+        definition {
+            cps {
+                script('''
+                    echo "Hola Mundo"
+                ''')
             }
         }
     }
