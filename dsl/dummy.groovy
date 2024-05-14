@@ -40,5 +40,10 @@ folder('dummy-folder') {
                 ''')
             }
         }
+
+        // Programa la ejecución del trabajo de pipeline
+        triggers {
+            cron('* * * * *') // Ejecutar cada minuto, puedes ajustar según tus necesidades
+        }
     }
 }
