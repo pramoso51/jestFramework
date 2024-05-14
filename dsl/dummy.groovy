@@ -28,20 +28,21 @@ job("mi-carpeta/mi-sub-carpeta/Seed 0") {
     }
     steps {
         shell ('''
-            set SERVER = $SERVER
+            SERVER="$SERVER"
             echo Server is $SERVER
             echo LLEVA: mi-carpeta/mi-sub-carpeta/mi-script
         ''')
     }
     publishers {
-      downstreamParameterized {
-        trigger("mi-carpeta/mi-sub-carpeta/mi-script") {
-          condition('SUCCESS')
-          parameters {
-            currentBuild()
-          }
+        downstreamParameterized {
+            trigger("mi-carpeta/mi-sub-carpeta/mi-script") {
+                condition('SUCCESS')
+                parameters {
+                    currentBuild()
+                }
+            }
         }
-      }
     }
 }
+
     
