@@ -42,8 +42,6 @@ folder('dummy-folder') {
         }
 
         // Programa la ejecución del trabajo de pipeline después de definirlo
-        script {
-            scheduleBuild()
-        }
+        pipelineJob.scheduleBuild('0 0 * * *')
     }
 }
