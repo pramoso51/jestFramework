@@ -42,8 +42,12 @@ folder('dummy-folder') {
         }
 
         // Programa la ejecución del trabajo de pipeline
-        triggers {
-            cron('* * * * *') // Ejecutar cada minuto, puedes ajustar según tus necesidades
+        configure { project ->
+            project / triggers {
+                'hudson.triggers.TimerTrigger' {
+                    spec('* * * * *') // Ejecutar cada minuto, puedes ajustar según tus necesidades
+                }
+            }
         }
     }
 }
