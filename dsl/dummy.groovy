@@ -22,7 +22,7 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     }
 }
 
-job("Seed 0") {
+job("mi-carpeta/mi-sub-carpeta/mi-script/Seed 0") {
     steps {
         shell ('''
             echo mi-carpeta/mi-sub-carpeta/mi-script
