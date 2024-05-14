@@ -23,9 +23,14 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
 }
 
 job("mi-carpeta/mi-sub-carpeta/Seed 0") {
+    parameters {
+        stringParam("SERVER", "PRODUCTION", "Production Environment")
+    }
     steps {
         shell ('''
-            echo mi-carpeta/mi-sub-carpeta/mi-script
+            set SERVER = $SERVER
+            echo Server is $SERVER
+            echo LLEVA: mi-carpeta/mi-sub-carpeta/mi-script
         ''')
     }
     publishers {
