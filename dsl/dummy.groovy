@@ -2,9 +2,9 @@ folder('mi-carpeta') {
     displayName('Mi Carpeta')
     description('Descripción de Mi Carpeta')
 
-    pipelineJob('mi-script') {
-        displayName('Mi Script')
-        description('Script dentro de la carpeta')
+    // pipelineJob('mi-script') {
+    //     displayName('Mi Script')
+    //     description('Script dentro de la carpeta')
 
         definition {
             cps {
@@ -15,5 +15,5 @@ folder('mi-carpeta') {
                 ''')
             }
         }
-    }
+    // }
 }
