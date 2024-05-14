@@ -14,7 +14,6 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
 
     definition {
         cps {
-            // Define el script dentro de la definición del trabajo
             script('''
                 echo "Hola Mundo"
             ''')
@@ -22,27 +21,27 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     }
 }
 
-job("mi-carpeta/mi-sub-carpeta/Seed 0") {
-    parameters {
-        stringParam("SERVER", "PRODUCTION", "Production Environment")
-    }
-    steps {
-        shell ('''
-            SERVER="$SERVER"
-            echo Server is $SERVER
-            echo LLEVA: mi-carpeta/mi-sub-carpeta/mi-script
-        ''')
-    }
-    publishers {
-        downstreamParameterized {
-            trigger("mi-carpeta/mi-sub-carpeta/mi-script") {
-                condition('SUCCESS')
-                parameters {
-                    currentBuild()
-                }
-            }
-        }
-    }
-}
+// job("mi-carpeta/mi-sub-carpeta/Seed 0") {
+//     parameters {
+//         stringParam("SERVER", "PRODUCTION", "Production Environment")
+//     }
+//     steps {
+//         shell ('''
+//             SERVER="$SERVER"
+//             echo Server is $SERVER
+//             echo LLEVA: mi-carpeta/mi-sub-carpeta/mi-script
+//         ''')
+//     }
+//     publishers {
+//         downstreamParameterized {
+//             trigger("mi-carpeta/mi-sub-carpeta/mi-script") {
+//                 condition('SUCCESS')
+//                 parameters {
+//                     currentBuild()
+//                 }
+//             }
+//         }
+//     }
+// }
 
     
