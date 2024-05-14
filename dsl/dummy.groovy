@@ -1,6 +1,6 @@
 pipelineJob('dummy-folder/Testing Jest') {
-    displayName('Testing Jest Pipeline')
-    description('Pipeline for running Jest tests')
+    displayName('Testing Jest Pipeline 1.0')
+    description('Pipeline for running Jest test 1.0')
 
     definition {
         cps {
