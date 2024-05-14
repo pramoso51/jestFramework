@@ -1,3 +1,5 @@
+import groovy.json.JsonBuilder
+import groovy.util.XmlParser
 import jenkins.model.Jenkins
 
 def jenkins = Jenkins.getInstance()
