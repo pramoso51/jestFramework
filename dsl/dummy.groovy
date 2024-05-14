@@ -41,7 +41,7 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
                     }
                     stage('Pruebas') {
                         steps {
-                            sh 'npm run test'
+                            sh 'npm run test:Dummy:Dev'
                         }
                     }
                 }
