@@ -21,4 +21,17 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
         }
     }
 }
+
+job('mi-carpeta/mi-sub-carpeta/mi-script') {
+    publishers {
+      downstreamParameterized {
+        trigger("allCases") {
+          condition('SUCCESS')
+          parameters {
+            currentBuild()
+          }
+        }
+      }
+    }
+}
     
