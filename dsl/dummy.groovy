@@ -42,6 +42,8 @@ folder('dummy-folder') {
         }
 
         // Programa la ejecución del trabajo de pipeline después de definirlo
-        pipelineJob.scheduleBuild('0 0 * * *')
+        triggers {
+            cron('0 0 * * *') // Ejecutar a la medianoche todos los días, puedes ajustar según tus necesidades
+        }
     }
 }
