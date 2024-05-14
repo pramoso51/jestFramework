@@ -25,7 +25,7 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
 job('Mi-Carpeta/Mi-Sub-Carpeta/Mi-Script') {
     publishers {
       downstreamParameterized {
-        trigger("Mi-Carpeta/Mi-Sub-Carpeta/Mi-Script") {
+        trigger("mi-Carpeta/mi-sub-carpeta/mi-script") {
           condition('SUCCESS')
           parameters {
             currentBuild()
