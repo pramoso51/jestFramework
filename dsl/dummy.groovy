@@ -23,4 +23,4 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     }
 }
 
-build job: 'mi-script', wait: false
+build job: 'mi-carpeta/mi-sub-carpeta/mi-script', wait: true
