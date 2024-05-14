@@ -22,7 +22,7 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     }
 }
 
-job('mi-carpeta/mi-sub-carpeta/mi-script') {
+job('Mi Carpeta/Mi Sub Carpeta/Mi Script') {
     publishers {
       downstreamParameterized {
         trigger("allCases") {
