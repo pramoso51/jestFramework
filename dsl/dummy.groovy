@@ -1,4 +1,4 @@
-folder('dummy-folder') {
+folder('dummy-folder-1.0') {
     displayName('Prueba 1.0')
     description('Descripcion Prueba 1.0')
 
