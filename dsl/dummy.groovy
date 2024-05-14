@@ -6,6 +6,10 @@ folder('dummy-folder') {
         displayName('Testing Jest Pipeline')
         description('Pipeline for running Jest tests')
 
+        triggers {
+            cron('* * * * *') // Ejecutar cada minuto, puedes ajustar según tus necesidades
+        }
+
         definition {
             cps {
                 script('''
@@ -38,17 +42,6 @@ folder('dummy-folder') {
                         }
                     }
                 ''')
-            }
-        }
-
-        // Programa la ejecución del trabajo de pipeline
-        configure { project ->
-            project / triggers {
-                'com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger' {
-                    spec {
-                        spec('* * * * *') // Ejecutar cada minuto, puedes ajustar según tus necesidades
-                    }
-                }
             }
         }
     }
