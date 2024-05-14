@@ -15,7 +15,34 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     definition {
         cps {
             script('''
-                echo "Hola Mundo"
+                pipeline {
+                    agent any
+                    tools {
+                        nodejs '22.1.0'
+                    }
+                    stages {
+                        stage('Checkout') {
+                            steps {
+                                git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
+                            }
+                        }
+                        stage('Revisa Version Node') {
+                            steps {
+                                sh 'npm --version'
+                            }
+                        }
+                        stage('Instalar dependencias') {
+                            steps {
+                                sh 'npm install'
+                            }
+                        }
+                        stage('Pruebas') {
+                            steps {
+                                sh 'npm run test'
+                            }
+                        }
+                    }
+                }
             ''')
         }
     }
