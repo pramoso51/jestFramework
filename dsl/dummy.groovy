@@ -21,6 +21,11 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
                         nodejs '22.1.0'
                     }
                     stages {
+                        stage('NODEJS') {
+                            steps {
+                                echo "NODEJS:22.1.0"
+                            }
+                        }
                         stage('Checkout') {
                             steps {
                                 git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
