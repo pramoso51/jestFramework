@@ -8,7 +8,7 @@ folder('dummy-folder') {
 
         definition {
             cps {
-                script("""
+                scriptText("""
                     pipeline {
                         agent any
                         tools {
