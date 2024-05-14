@@ -28,8 +28,8 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
                     }
                     stage('Revisa Version Node') {
                         steps {
-                            sh 'npm --version'
                             sh 'rm -rf node_modules'
+                            sh 'npm --version'
                         }
                     }
                     stage('Instalar dependencias') {
