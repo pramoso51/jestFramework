@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+#VSCode
+.vscode
+debug.log 
+
+# MACOS 
+.DS_Store
+
+# .env file 
+.env
