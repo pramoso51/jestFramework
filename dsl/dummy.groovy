@@ -9,11 +9,8 @@ folder('mi-carpeta') {
 
         definition {
             cps {
-                // Define el script dentro de la definición del trabajo
-                script('''
-                    echo "Hola Mundo"
-                    // Agrega aquí tus comandos o script
-                ''')
+                // Especifica la ruta del script dentro de la carpeta
+                scriptPath('mi-script.groovy')
             }
         }
     }
