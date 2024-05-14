@@ -1,39 +1,45 @@
 folder('dummy-folder') {
-  displayName('Nombre del Folder Dummy')
-  description('Descripcion del Folder Dummy')
+    displayName('Nombre del Folder Dummy')
+    description('Descripcion del Folder Dummy')
 }
 
 folder('dummy-folder/testing-folder') {
-  description('Folder containing all QA jobs for project A')
+    description('Folder containing all QA jobs for project A')
 
-  pipeline {
-    agent any
-    
-    tools {
-        nodejs '22.1.0'
-    }
+    pipelineJob('Testing Jest') {
+        displayName('Testing Jest Pipeline')
+        description('Pipeline for running Jest tests')
 
-    stages {
-      stage('Checkout') {
-          steps {
-              git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
-          }
-      }
-      stage('Revisa Version Node') {
-          steps {
-              sh 'npm --version'
-          }
-      }
-      stage('Instalar dependencias') {
-          steps {
-              sh 'npm install'
-          }
-      }
-      stage('Pruebas') {
-          steps {
-              sh 'npm run test'
-          }
-      }
+        definition {
+            cps {
+                script {
+                    tools {
+                        nodejs '22.1.0'
+                    }
+                    node {
+                        stage('Checkout') {
+                            steps {
+                                git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
+                            }
+                        }
+                        stage('Revisa Version Node') {
+                            steps {
+                                sh 'npm --version'
+                            }
+                        }
+                        stage('Instalar dependencias') {
+                            steps {
+                                sh 'npm install'
+                            }
+                        }
+                        stage('Pruebas') {
+                            steps {
+                                sh 'npm run test'
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 }
