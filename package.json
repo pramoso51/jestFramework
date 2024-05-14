@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "jest",
+    "test": "npx jest",
+    "test:Dummy:Dev": "TESTCONFIG=src/controllers/system/config/system.dev.json npx jest",
     "lint": "eslint ."
   },
   "devDependencies": {

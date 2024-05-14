@@ -1,0 +1,6 @@
+{
+  "apiUrl": "localhost",
+  "testInputFiles": {
+    "dummy": "src/controllers/system/data/dummy.json"
+  }
+}

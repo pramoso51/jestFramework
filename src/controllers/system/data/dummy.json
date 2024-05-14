@@ -1,0 +1,16 @@
+[
+  {
+    "api": "Dummy",
+    "component": "Dummy",
+    "testCaseId": "TC-00",
+    "enabled": true,
+    "testData": [
+      {
+        "title": "Case 1"
+      },
+      {
+        "title": "Case 2"
+      }
+    ]
+  }
+]

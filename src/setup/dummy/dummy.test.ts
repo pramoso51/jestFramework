@@ -1,8 +1,8 @@
 import {describe, expect, test} from '@jest/globals';
-import {sum} from './sum';
+import {sum} from './dummy';
 
-describe('sum module', () => {
-  test('adds 1 + 2 to equal 3', () => {
+describe('Test Case Dummy', () => {
+  test('Test Case 1+2', () => {
     expect(sum(1, 2)).toBe(3);
   });
 });
