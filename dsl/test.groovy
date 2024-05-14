@@ -10,33 +10,33 @@ folder('dummy-folder-1.0') {
             cps {
                 script('''
                     pipeline {
-                        agent any
-                        tools {
-                            nodejs '22.1.0'
+                    agent any
+                    tools {
+                        nodejs '22.1.0'
+                    }
+                    stages {
+                        stage('Checkout') {
+                            steps {
+                                git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
+                            }
                         }
-                        stages {
-                            stage('Checkout') {
-                                steps {
-                                    git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
-                                }
+                        stage('Revisa Version Node') {
+                            steps {
+                                sh 'npm --version'
                             }
-                            stage('Revisa Version Node') {
-                                steps {
-                                    sh 'npm --version'
-                                }
+                        }
+                        stage('Instalar dependencias') {
+                            steps {
+                                sh 'npm install'
                             }
-                            stage('Instalar dependencias') {
-                                steps {
-                                    sh 'npm install'
-                                }
-                            }
-                            stage('Pruebas') {
-                                steps {
-                                    sh 'npm run test'
-                                }
+                        }
+                        stage('Pruebas') {
+                            steps {
+                                sh 'npm run test'
                             }
                         }
                     }
+                }
                 ''')
             }
         }
