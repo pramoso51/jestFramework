@@ -1,47 +1,20 @@
-folder('dummy-folder-1.0') {
-    displayName('Prueba 1.0')
-    description('Descripcion Prueba 1.0')
+folder('mi-carpeta') {
+    displayName('Mi Carpeta')
+    description('Descripción de Mi Carpeta')
 
-    pipelineJob('pipelineJob 1.0') {
-        displayName('Campo 1: 1.0')
-        description('Campo 2: 1.0')
+    // Define un nuevo job dentro de la carpeta
+    pipelineJob('mi-script') {
+        displayName('Mi Script')
+        description('Script dentro de la carpeta')
 
         definition {
             cps {
+                // Define el script dentro de la definición del trabajo
                 script('''
-                    pipeline {
-                        agent any
-                        tools {
-                            nodejs '22.1.0'
-                        }
-                        stages {
-                            stage('Checkout') {
-                                steps {
-                                    git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
-                                }
-                            }
-                            stage('Revisa Version Node') {
-                                steps {
-                                    sh 'npm --version'
-                                }
-                            }
-                            stage('Instalar dependencias') {
-                                steps {
-                                    sh 'npm install'
-                                }
-                            }
-                            stage('Pruebas') {
-                                steps {
-                                    sh 'npm run test'
-                                }
-                            }
-                        }
-                    }
+                    echo "Hola Mundo"
+                    // Agrega aquí tus comandos o script
                 ''')
             }
-        }
-        triggers {
-            cron('* * * * *') // Ejecutar cada 5 minutos, por ejemplo
         }
     }
 }
