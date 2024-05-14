@@ -1,6 +1,3 @@
-import groovy.json.JsonBuilder
-import groovy.json.JsonSlurper
-import groovy.util.XmlParser
 import jenkins.model.Jenkins
 
 def jenkins = Jenkins.getInstance()
@@ -17,7 +14,8 @@ folder('mi-folder') {
         definition {
             cps {
                 script('''
-                    echo "Hola Mundo"
+                    // Aquí va el script del pipeline
+                    println "Hola Mundo"
                 ''')
             }
         }
