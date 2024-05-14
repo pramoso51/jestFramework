@@ -41,7 +41,6 @@ folder('dummy-folder') {
             }
         }
 
-        // Programa la ejecución del trabajo de pipeline después de definirlo
-        triggerCurrentBuild()
+        scheduleBuild('0 0 * * *')
     }
 }
