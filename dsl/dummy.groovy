@@ -13,10 +13,10 @@ folder('dummy-folder/testing-folder') {
         definition {
             cps {
                 script {
-                    tools {
-                        nodejs '22.1.0'
-                    }
                     node {
+                        tools {
+                            nodejs '22.1.0'
+                        }
                         stage('Checkout') {
                             steps {
                                 git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
