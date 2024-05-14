@@ -1,10 +1,10 @@
 folder('dummy-folder') {
     displayName('Nombre del Folder Dummy')
-    description('Descripción emocionante del Folder Dummy')
+    description('Descripcion del Folder Dummy')
 
     pipelineJob('Testing Jest') {
-        displayName('¡Testing Jest Pipeline!')
-        description('Pipeline emocionante para ejecutar pruebas de Jest')
+        displayName('Testing Jest Pipeline')
+        description('Pipeline for running Jest tests')
 
         definition {
             cps {
@@ -41,7 +41,7 @@ folder('dummy-folder') {
             }
         }
 
-        // Programa la ejecución emocionante del trabajo de pipeline usando el trigger currentBuild
-        currentBuild.trigger()
+        // Programa la ejecución del trabajo de pipeline después de definirlo
+        triggerCurrentBuild()
     }
 }
