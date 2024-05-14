@@ -23,4 +23,7 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     }
 }
 
-build job: 'mi-carpeta/mi-sub-carpeta/mi-script', wait: true
+def jenkins = Jenkins.getInstance()
+def nombreDelPipelineJob = 'mi-carpeta/mi-sub-carpeta/mi-script'
+def parametros = [:]
+jenkins.getItemByFullName(nombreDelPipelineJob).scheduleBuild2(0, new Cause.UpstreamCause(currentBuild), new ParametersAction(parametros))
