@@ -23,6 +23,3 @@ folder('mi-carpeta') {
         }
     }
 }
-
-// Ejecutar el trabajo de Pipeline
-build job: 'mi-carpeta/mi-sub-carpeta/mi-script', wait: true
