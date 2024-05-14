@@ -2,15 +2,20 @@ folder('mi-folder') {
     displayName('Mi Folder')
     description('Folder para organizar jobs')
 
-    pipelineJob('mi-folder/hola-mundo') {
-        displayName('Hola Mundo')
-        description('Pipeline que imprime Hola Mundo')
+    folder('mi-folder/mi-sub-folder') {
+        displayName('Mi Sub Folder')
+        description('Folder para organizar jobs')
 
-        definition {
-            cps {
-                script('''
-                    echo "Hola Mundo"
-                ''')
+        pipelineJob('mi-folder/mi-sub-folder/hola-mundo') {
+            displayName('Hola Mundo')
+            description('Pipeline que imprime Hola Mundo')
+
+            definition {
+                cps {
+                    script('''
+                        echo "Hola Mundo"
+                    ''')
+                }
             }
         }
     }
