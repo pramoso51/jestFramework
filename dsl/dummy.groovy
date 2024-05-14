@@ -13,10 +13,14 @@ folder('dummy-folder/testing-folder') {
         definition {
             cps {
                 script {
+                    // Define la versión de Node.js para este pipeline
+                    tools {
+                        nodejs '22.1.0'
+                    }
+
+                    // Define los pasos del pipeline dentro de node
                     node {
-                        tools {
-                            nodejs '22.1.0'
-                        }
+                        // Definición de tu pipeline aquí
                         stage('Checkout') {
                             steps {
                                 git branch: 'main', url: 'https://github.com/pramoso51/jestFramework.git'
