@@ -1,8 +1,9 @@
 folder('dummy-folder') {
     displayName('Nombre del Folder Dummy')
     description('Descripcion del Folder Dummy')
+}
 
-    pipelineJob('Testing Jest') {
+pipelineJob('Testing Jest') {
         displayName('Testing Jest Pipeline')
         description('Pipeline for running Jest tests')
 
@@ -44,4 +45,3 @@ folder('dummy-folder') {
             cron('@after_build') 
         }
     }
-}
