@@ -6,6 +6,10 @@ folder('dummy-folder') {
         displayName('Testing Jest Pipeline')
         description('Pipeline for running Jest tests')
 
+        triggers {
+            cron('@after_build') 
+        }
+
         definition {
             cps {
                 script('''
@@ -34,11 +38,6 @@ folder('dummy-folder') {
                                 steps {
                                     sh 'npm run test'
                                 }
-                            }
-                        }
-                        post {
-                            always {
-                                input 'Presiona Enter para ejecutar nuevamente este pipeline'
                             }
                         }
                     }
