@@ -1,4 +1,15 @@
-pipeline {
+folder('dummy-folder') {
+    displayName('Nombre del Folder Dummy')
+    description('Descripcion del Folder Dummy')
+
+    pipelineJob('Testing Jest') {
+        displayName('Testing Jest Pipeline')
+        description('Pipeline for running Jest tests')
+
+        definition {
+            cps {
+                script('''
+                    pipeline {
                         agent any
                         tools {
                             nodejs '22.1.0'
@@ -26,3 +37,11 @@ pipeline {
                             }
                         }
                     }
+                ''')
+            }
+        }
+    }
+    triggers {
+            cron('@after_build') 
+        }
+}
