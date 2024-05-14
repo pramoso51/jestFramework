@@ -22,7 +22,12 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     }
 }
 
-job('mi-carpeta/mi-sub-carpeta/mi-script') {
+job("mi-carpeta/mi-sub-carpeta/mi-script") {
+    steps {
+        shell ('''
+            echo mi-carpeta/mi-sub-carpeta/mi-script
+        ''')
+    }
     publishers {
       downstreamParameterized {
         trigger("mi-carpeta/mi-sub-carpeta/mi-script") {
