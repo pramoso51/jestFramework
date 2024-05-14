@@ -30,11 +30,13 @@ pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
                         steps {
                             sh 'rm -rf node_modules'
                             sh 'npm --version'
+                            sleep 5
                         }
                     }
                     stage('Instalar dependencias') {
                         steps {
                             sh 'npm install'
+                            sleep 5
                         }
                     }
                     stage('Pruebas') {
