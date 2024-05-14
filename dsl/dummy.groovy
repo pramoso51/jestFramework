@@ -3,12 +3,12 @@ folder('mi-carpeta') {
     description('Descripción de Mi Carpeta')
 }
 
-folder('mi-sub-carpeta') {
+folder('mi-carpeta/mi-sub-carpeta') {
     displayName('Mi Sub Carpeta')
     description('Descripción de Mi Sub Carpeta')
 }
 
-pipelineJob('mi-script') {
+pipelineJob('mi-carpeta/mi-sub-carpeta/mi-script') {
     displayName('Mi Script')
     description('Script dentro de la carpeta')
 
